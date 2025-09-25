@@ -1,4 +1,4 @@
 name = "sagi"
 compatibility_date = "2025-09-25"
 type = "javascript"
-main = "functions/books.js"
+main = "functions/api/books.js"
