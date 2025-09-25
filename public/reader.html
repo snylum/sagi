@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sagi Reader</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/style.css">
+  <link rel="icon" type="image/png" href="/favicon.png">
+
+  <!-- Markdown library -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body class="reader-body">
+  <div id="book-container" class="book-container">
+    <!-- The flipping book will be injected here -->
+  </div>
+
+  <!-- Navigation controls -->
+  <div class="nav-controls">
+    <button id="prevBtn" class="nav-btn">← Previous</button>
+    <button id="tocBtn" class="nav-btn">☰ Chapters</button>
+    <button id="nextBtn" class="nav-btn">Next →</button>
+    <button id="backBtn" class="nav-btn">Back to Library</button>
+  </div>
+
+  <!-- Table of Contents -->
+  <div id="toc" class="toc hidden">
+    <h3>Chapters</h3>
+    <ul id="toc-list"></ul>
+  </div>
+
+  <script src="/reader.js"></script>
+</body>
+</html>
