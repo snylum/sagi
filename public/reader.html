@@ -4,34 +4,33 @@
   <meta charset="UTF-8">
   <title>Sagi Reader</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <link rel="stylesheet" href="/style.css">
   <link rel="icon" type="image/png" href="/favicon.png">
-
-  <!-- Markdown parser -->
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
-<body class="reader-body">
-  <!-- Dark overlay when book is in focus -->
+<body>
+  <!-- Dark overlay -->
   <div id="overlay" class="overlay hidden"></div>
 
-  <!-- Root book container -->
+  <!-- Reader Root -->
   <div id="reader-root" class="reader-root hidden">
-    <div id="book" class="book">
-      <div id="cover-front" class="cover front"></div>
-      <div id="pages" class="pages"></div>
-      <div id="cover-back" class="cover back"></div>
+    <div class="book-scene">
+      <div id="book" class="book">
+        <div id="cover-front" class="cover front"></div>
+        <div id="pages" class="pages"></div>
+        <div id="cover-back" class="cover back"></div>
+      </div>
     </div>
 
-    <!-- Navigation controls -->
-    <div class="nav-controls">
-      <button id="prevChapter" class="nav-btn">← Previous</button>
-      <button id="tocBtn" class="nav-btn">☰ Chapters</button>
-      <button id="nextChapter" class="nav-btn">Next →</button>
-      <button id="backLibrary" class="nav-btn">Back to Library</button>
+    <!-- Navigation -->
+    <div class="reader-nav">
+      <button id="prevChapter">← Previous</button>
+      <button id="tocBtn">☰ Chapters</button>
+      <button id="nextChapter">Next →</button>
+      <button id="backLibrary">Back</button>
     </div>
 
-    <!-- Table of Contents panel -->
+    <!-- Table of Contents -->
     <div id="toc" class="toc hidden">
       <h3>Chapters</h3>
       <ul id="tocList"></ul>
