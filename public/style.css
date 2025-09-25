@@ -6,7 +6,11 @@
 }
 
 *{box-sizing:border-box}
-html,body{height:100%;margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial;color:#0f172a;background:var(--bg)}
+html,body{
+  height:100%;margin:0;
+  font-family:Inter,ui-sans-serif,system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial;
+  color:#0f172a;background:var(--bg)
+}
 a{color:inherit}
 
 .container{max-width:960px;margin:2rem auto;padding:1rem}
@@ -16,10 +20,11 @@ a{color:inherit}
 .shelf-grid{
   display:grid;
   grid-template-columns: repeat(auto-fill,minmax(120px,1fr));
-  gap:1rem;
+  gap:1.5rem;
   padding:1rem;
   max-width:1100px;
   margin:1rem auto;
+  text-align:center;
 }
 
 /* Book tile (spine) */
@@ -27,9 +32,10 @@ a{color:inherit}
   perspective:1200px;
   cursor:pointer;
   display:flex;
+  flex-direction:column;
   align-items:center;
-  justify-content:center;
-  height:220px;
+  justify-content:flex-start;
+  height:auto;
 }
 .book-tile .spine{
   width:100px;
@@ -41,6 +47,20 @@ a{color:inherit}
   transform-origin:center;
 }
 .book-tile:hover .spine{ transform: translateY(-8px) rotateY(-8deg); box-shadow: 0 14px 32px rgba(2,6,23,0.2) }
+
+/* Book caption */
+.book-tile .caption{
+  margin-top:0.5rem;
+  font-size:0.9rem;
+  font-family:'Merriweather', Georgia, serif;
+  font-weight:500;
+  color:#1e293b;
+  line-height:1.2;
+  max-width:100px;
+  text-overflow:ellipsis;
+  overflow:hidden;
+  white-space:nowrap;
+}
 
 /* Reader root */
 .reader-root{ position:fixed; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; z-index:60; pointer-events:auto }
@@ -115,8 +135,9 @@ a{color:inherit}
   backface-visibility:hidden;
   overflow:auto;
   padding:24px;
-  font-size:0.975rem;
-  line-height:1.6;
+  font-size:1rem;
+  line-height:1.65;
+  font-family:'Merriweather', Georgia, serif;
 }
 
 /* flipped state rotates page out */
@@ -133,7 +154,7 @@ a{color:inherit}
 }
 
 /* content typography inside pages */
-.page h1, .page h2, .page h3 { margin: 0 0 .6rem 0; }
+.page h1, .page h2, .page h3 { margin: 0 0 .6rem 0; font-family:'Merriweather', Georgia, serif; }
 .page p { margin: 0 0 1rem 0; white-space:pre-wrap; }
 
 /* Reader nav */
@@ -160,6 +181,7 @@ a{color:inherit}
   border-radius:10px;
   padding:12px;
   box-shadow: 0 12px 34px rgba(2,6,23,0.12);
+  font-family:'Merriweather', Georgia, serif;
 }
 .toc.hidden{ display:none }
 .toc ul{ list-style:none;padding:0;margin:0 }
