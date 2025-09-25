@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Editor — Publish Book</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>Publisher</h1>
+    <form id="bookForm">
+      <fieldset>
+        <legend>Book</legend>
+        <input id="bookId" placeholder="Book ID (leave empty for new book)" />
+        <input id="bookTitle" placeholder="Book Title" required />
+        <textarea id="bookDesc" placeholder="Short description"></textarea>
+        <label class="muted">Cover image (recommended 800×1200) — will be encoded as data URI</label>
+        <input id="bookCover" type="file" accept="image/*" />
+      </fieldset>
+
+      <fieldset>
+        <legend>New Chapter</legend>
+        <input id="chapterTitle" placeholder="Chapter Title" required />
+        <select id="modeSelect">
+          <option value="scroll">Scroll</option>
+          <option value="novel">Novel</option>
+        </select>
+        <textarea id="chapterBody" placeholder="Write in Markdown..." rows="14"></textarea>
+      </fieldset>
+
+      <div class="controls">
+        <button type="submit">Publish Chapter</button>
+        <div id="status" class="muted"></div>
+      </div>
+    </form>
+
+    <section class="preview">
+      <h2>Live Preview</h2>
+      <div id="preview"></div>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="/editor.js"></script>
+</body>
+</html>
