@@ -5,30 +5,37 @@
   <title>Sagi Reader</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Styles -->
   <link rel="stylesheet" href="/style.css">
   <link rel="icon" type="image/png" href="/favicon.png">
 
-  <!-- Markdown library -->
+  <!-- Markdown parser -->
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 <body class="reader-body">
-  <div id="book-container" class="book-container">
-    <!-- The flipping book will be injected here -->
-  </div>
+  <!-- Dark overlay when book is in focus -->
+  <div id="overlay" class="overlay hidden"></div>
 
-  <!-- Navigation controls -->
-  <div class="nav-controls">
-    <button id="prevBtn" class="nav-btn">← Previous</button>
-    <button id="tocBtn" class="nav-btn">☰ Chapters</button>
-    <button id="nextBtn" class="nav-btn">Next →</button>
-    <button id="backBtn" class="nav-btn">Back to Library</button>
-  </div>
+  <!-- Root book container -->
+  <div id="reader-root" class="reader-root hidden">
+    <div id="book" class="book">
+      <div id="cover-front" class="cover front"></div>
+      <div id="pages" class="pages"></div>
+      <div id="cover-back" class="cover back"></div>
+    </div>
 
-  <!-- Table of Contents -->
-  <div id="toc" class="toc hidden">
-    <h3>Chapters</h3>
-    <ul id="toc-list"></ul>
+    <!-- Navigation controls -->
+    <div class="nav-controls">
+      <button id="prevChapter" class="nav-btn">← Previous</button>
+      <button id="tocBtn" class="nav-btn">☰ Chapters</button>
+      <button id="nextChapter" class="nav-btn">Next →</button>
+      <button id="backLibrary" class="nav-btn">Back to Library</button>
+    </div>
+
+    <!-- Table of Contents panel -->
+    <div id="toc" class="toc hidden">
+      <h3>Chapters</h3>
+      <ul id="tocList"></ul>
+    </div>
   </div>
 
   <script src="/reader.js"></script>
