@@ -2,19 +2,3 @@ name = "sagi"
 compatibility_date = "2025-09-25"
 type = "javascript"
 main = "functions/books.js"
-
-[kv_namespaces]
-  [[kv_namespaces]]
-  binding = "STORIES"
-  id = "YOUR_STORIES_KV_ID"
-  [[kv_namespaces]]
-  binding = "SESSIONS"
-  id = "YOUR_SESSIONS_KV_ID"
-
-[r2_buckets]
-  [[r2_buckets]]
-  binding = "COVERS"
-  bucket_name = "your-covers-bucket"
-
-[vars]
-  SECRET_TOKEN = "super-secret-password"
